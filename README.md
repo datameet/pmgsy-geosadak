@@ -17,7 +17,7 @@
 
 ### Mapbox
 
-**[View interactive map 🗺️](https://api.mapbox.com/styles/v1/planemad/cknj1leps0ywv17lrj8d16vnj.html?title=copy&access_token=pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiY2l2eDhnNzNpMDAwNzJ5cGowcnpiMXJkdyJ9.NljuPglsRA3mTGf-4CLIEg&zoomwheel=true&fresh=true#12.56/12.48844/77.19406)**
+Interactive map 🗺️: http://projects.datameet.org/pmgsy-geosadak/map.html
 - Mapbox style url `mapbox://styles/planemad/cknj1leps0ywv17lrj8d16vnj`
 - Mapbox tileset id [`planemad.india-rural-connectivity`](https://studio.mapbox.com/tilesets/planemad.india-rural-connectivity)
 - [Mapbox GL JS docs](https://docs.mapbox.com/mapbox-gl-js/guides/)
