@@ -6,6 +6,9 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+<!-- Load the `mapbox-gl-geocoder` plugin. -->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -19,7 +22,8 @@ body { margin: 0; padding: 0; }
         container: 'map', // container ID
         style: 'mapbox://styles/planemad/cknj1leps0ywv17lrj8d16vnj', // style URL
         center: [76, 28], // starting position [lng, lat]
-        zoom: 11.5 // starting zoom
+        zoom: 11.5 // starting zoom,
+	hash: true
     });
   
   // Add the control to the map.
@@ -27,7 +31,8 @@ body { margin: 0; padding: 0; }
   map.addControl(
     new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
+    mapboxgl: mapboxgl,
+  countries: 'in'
     })
   );
 </script>
