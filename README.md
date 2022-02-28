@@ -12,8 +12,8 @@
 
 ### OpenStreetMap
 
-- iD custom background layer url for tracing `https://api.mapbox.com/styles/v1/planemad/cknj1leps0ywv17lrj8d16vnj/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiY2t6enBzbzdsMGNrZzNjbXhyeWdkeW55MCJ9.tAP01enwlIZkOuQth0mJLA` 
-- [Edit OpenStreetMap](https://www.openstreetmap.org/#map=6/20.654/78.915) | [Instructions](https://learnosm.org/en/beginner/id-editor/#configuring-the-background-layer)
+- iD custom background layer url for tracing `https://api.mapbox.com/styles/v1/planemad/cknj1leps0ywv17lrj8d16vnj/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiY2t6enBzbzdsMGNrZzNjbXhyeWdkeW55MCJ9.tAP01enwlIZkOuQth0mJLA` | [Edit OpenStreetMap](https://www.openstreetmap.org/#map=6/20.654/78.915) | [Instructions](https://learnosm.org/en/beginner/id-editor/#configuring-the-background-layer)
+- JOSM WMTS imagery `wmts:https://api.mapbox.com/styles/v1/planemad/cknj1leps0ywv17lrj8d16vnj/wmts?access_token=pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiY2l2eDhnNzNpMDAwNzJ5cGowcnpiMXJkdyJ9.NljuPglsRA3mTGf-4CLIEg` | [Instructions](https://learnosm.org/en/josm/josm-adding-imagery/)
 
 ### Mapbox
 
