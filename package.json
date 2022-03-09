@@ -5,7 +5,7 @@
   "source": "src/map.html",
   "scripts": {
     "start": "parcel",
-    "predeploy": "rm -rf dist && parcel build --public-url https://projects.datameet.org/pmgsy-geosadak/",
+    "predeploy": "rm -rf dist && parcel build --public-url /pmgsy-geosadak",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
