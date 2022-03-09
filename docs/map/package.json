@@ -1,0 +1,22 @@
+{
+  "name": "geosadak-map",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "predeploy": "rm -rf dist && parcel build --public-url https://projects.datameet.org/pmgsy-geosadak/map/",
+    "deploy": "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^3.2.3",
+    "parcel": "^2.3.2"
+  },
+  "dependencies": {
+    "geojsontoosm": "^0.0.3",
+    "osm-and-geojson": "^0.1.2"
+  }
+}
