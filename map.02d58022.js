@@ -529,7 +529,7 @@ const map = new mapboxgl.Map({
         76,
         28
     ],
-    zoom: 11.2,
+    zoom: 9,
     hash: true
 });
 // Add the control to the map.
