@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PMGSY Geosadak roads and poi map</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <script type="module" src="index.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <!-- Load the `mapbox-gl-geocoder` plugin. -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+      }
+      #map-overlay {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 300px;
+        background-color: rgba(222, 222, 222, 0.66);
+        padding: 10px;
+      }
+      hr {
+        float: left;
+        width: 20px;
+        margin-right: 5px;
+        background: none;
+        height: 0;
+        border: 0 none;
+        border-top: 2px solid #fff;
+        clear: both;
+      }
+      .dash {
+        border-top: 4px dotted #fe0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="map-overlay">
+      <h2>geosadak-map</h2>
+      <div>
+        <hr />
+        Geosadak roads
+      </div>
+      <div>
+        <hr class="dash" />
+        Geosadak roads not in OSM
+      </div>
+      <p>Zoom in and click to download JOSM file of diff roads</p>
+    </div>
+  </body>
+</html>
