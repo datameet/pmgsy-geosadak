@@ -7,8 +7,8 @@ const map = new mapboxgl.Map({
   container: "map", // container ID
   style: "mapbox://styles/planemad/cknj1leps0ywv17lrj8d16vnj", // style URL
   center: [76, 28], // starting position [lng, lat]
-  zoom: 11.2, // starting zoom
-  hash: true,
+  zoom: 9, // starting zoom
+  hash: true
 });
 
 // Add the control to the map.
