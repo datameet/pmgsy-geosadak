@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"3801V":[function(require,module,exports) {
+})({"ecuu8":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "c662b2d902d58022";
+module.bundle.HMR_BUNDLE_ID = "e12164104a0ba830";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -518,7 +518,7 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"dx2Y6":[function(require,module,exports) {
+},{}],"4nvGE":[function(require,module,exports) {
 var geojsontoosm = require("geojsontoosm");
 var osm_geojson = require("osm-and-geojson");
 mapboxgl.accessToken = "pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiY2l2eDhnNzNpMDAwNzJ5cGowcnpiMXJkdyJ9.NljuPglsRA3mTGf-4CLIEg";
@@ -530,7 +530,8 @@ const map = new mapboxgl.Map({
         28
     ],
     zoom: 9,
-    hash: true
+    hash: true,
+    projection: "globe"
 });
 // Add the control to the map.
 map.addControl(new mapboxgl.NavigationControl());
@@ -539,6 +540,40 @@ map.addControl(new MapboxGeocoder({
     mapboxgl: mapboxgl,
     countries: "in"
 }));
+map.on("load", function() {
+    map.addSource("soi", {
+        type: "raster",
+        tiles: [
+            "https://storage.googleapis.com/soi_data/export/tiles/{z}/{x}/{y}.webp", 
+        ],
+        tileSize: 256
+    });
+    map.addLayer({
+        id: "soi",
+        type: "raster",
+        source: "soi",
+        minzoom: 13,
+        maxzoom: 22,
+        layout: {
+            visibility: "visible"
+        },
+        paint: {
+            "raster-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                13,
+                0,
+                16,
+                0.6
+            ]
+        }
+    }, "water");
+});
 // Convert tile features as OSM XML
 map.on("click", (e)=>{
     if (map.getZoom() >= 10) {
@@ -560,12 +595,12 @@ map.on("click", (e)=>{
             element.click();
             document.body.removeChild(element);
         }
-        download("geosadak_diff.osm", osm_xml);
+    // download("geosadak_diff.osm", osm_xml);
     // window.open(`http://127.0.0.1:8111/load_data?new_layer=true&layer_name=geosadak&mime_type=application/x-osm+xml&data="${enc_osm_xml}"`, '_blank');
     }
 });
 
-},{"geojsontoosm":"fvB4r","osm-and-geojson":"gDxAM"}],"fvB4r":[function(require,module,exports) {
+},{"geojsontoosm":"l7QzA","osm-and-geojson":"2wrpn"}],"l7QzA":[function(require,module,exports) {
 var jxon = require('jxon');
 function geojsontoosm(geojson) {
     var features = geojson.features || (geojson.length > 0 ? geojson : [
@@ -727,7 +762,7 @@ function processMultiPolygon(coordinates, properties, relations, ways, nodes, no
 }
 module.exports = geojsontoosm;
 
-},{"jxon":"3BK53"}],"3BK53":[function(require,module,exports) {
+},{"jxon":"fIXOI"}],"fIXOI":[function(require,module,exports) {
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) // AMD. Register as an anonymous module.
     define(factory(window));
@@ -922,10 +957,10 @@ module.exports = geojsontoosm;
     }();
 });
 
-},{"xmldom":"jhUEF"}],"jhUEF":[function(require,module,exports) {
+},{"xmldom":"9E2Ve"}],"9E2Ve":[function(require,module,exports) {
 "use strict";
 
-},{}],"gDxAM":[function(require,module,exports) {
+},{}],"2wrpn":[function(require,module,exports) {
 var osm_geojson = {
 };
 osm_geojson.geojson2osm = function(geo1, changeset, osmChange) {
@@ -1305,6 +1340,6 @@ osm_geojson.osm2geojson = function(osm, metaProperties) {
 };
 if (typeof module !== 'undefined') module.exports = osm_geojson;
 
-},{}]},["3801V","dx2Y6"], "dx2Y6", "parcelRequireb01d")
+},{}]},["ecuu8","4nvGE"], "4nvGE", "parcelRequire94c2")
 
-//# sourceMappingURL=map.02d58022.js.map
+//# sourceMappingURL=map.4a0ba830.js.map
