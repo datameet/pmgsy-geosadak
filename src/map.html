@@ -10,17 +10,14 @@
     <!-- <link rel="stylesheet" href="styles.css" /> -->
     <script type="module" src="map.js"></script>
     <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
+      href="https://api.mapbox.com/mapbox-gl-js/v2.9.0-beta.1/mapbox-gl.css"
       rel="stylesheet"
     />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
-    <!-- Load the `mapbox-gl-geocoder` plugin. -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
-      type="text/css"
-    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.0-beta.1/mapbox-gl.js"></script>
+   <!-- Load the `mapbox-gl-geocoder` plugin. -->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
     <style>
       body {
         margin: 0;
@@ -46,10 +43,16 @@
         background: none;
         height: 0;
         border: 0 none;
-        border-top: 2px solid #fff;
+        border-top: 2px solid rgb(27, 27, 27);
         clear: both;
       }
-      .dash {
+      .osm {
+        border-top: 1px solid rgb(126, 126, 126);
+      }
+      .geosadak {
+        border-top: 2px solid rgb(27, 27, 27);
+      }
+      .diff {
         border-top: 4px dotted #fe0000;
       }
     </style>
@@ -59,11 +62,15 @@
     <div id="map-overlay">
       <h2>geosadak-map</h2>
       <div>
-        <hr />
+        <hr class="osm" />
+        OpenStreetMap roads
+      </div>
+      <div>
+        <hr class="geosadak" />
         Geosadak roads
       </div>
       <div>
-        <hr class="dash" />
+        <hr class="diff" />
         Geosadak roads not in OSM (Generated March 8)
       </div>
       <p>Zoom in and click to download JOSM file of missing roads</p>

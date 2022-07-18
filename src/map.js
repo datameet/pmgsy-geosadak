@@ -8,7 +8,8 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/planemad/cknj1leps0ywv17lrj8d16vnj", // style URL
   center: [76, 28], // starting position [lng, lat]
   zoom: 9, // starting zoom
-  hash: true
+  hash: true,
+  projection: "globe",
 });
 
 // Add the control to the map.
@@ -20,6 +21,41 @@ map.addControl(
     countries: "in",
   })
 );
+
+map.on("load", function () {
+  map.addSource("soi", {
+    type: "raster",
+    tiles: [
+      "https://storage.googleapis.com/soi_data/export/tiles/{z}/{x}/{y}.webp",
+    ],
+    tileSize: 256,
+  });
+
+  map.addLayer(
+    {
+      id: "soi",
+      type: "raster",
+      source: "soi",
+      minzoom: 13,
+      maxzoom: 22,
+      layout: {
+        visibility: "visible",
+      },
+      paint: {
+        "raster-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          13,
+          0,
+          16,
+          0.6
+        ],
+      },
+    },
+    "water"
+  );
+});
 
 // Convert tile features as OSM XML
 
@@ -52,7 +88,7 @@ map.on("click", (e) => {
       document.body.removeChild(element);
     }
 
-    download("geosadak_diff.osm", osm_xml);
+    // download("geosadak_diff.osm", osm_xml);
 
     // window.open(`http://127.0.0.1:8111/load_data?new_layer=true&layer_name=geosadak&mime_type=application/x-osm+xml&data="${enc_osm_xml}"`, '_blank');
   }
