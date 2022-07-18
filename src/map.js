@@ -37,7 +37,7 @@ map.on("load", function () {
       type: "raster",
       source: "soi",
       minzoom: 13,
-      maxzoom: 22,
+      maxzoom: 16,
       layout: {
         visibility: "visible",
       },
@@ -47,9 +47,9 @@ map.on("load", function () {
           ["linear"],
           ["zoom"],
           13,
-          0,
+          0.3,
           16,
-          0.6
+          0
         ],
       },
     },
